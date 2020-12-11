@@ -83,7 +83,6 @@ Pillow==7.2.0
 portpicker==1.2.0
 prompt-toolkit==1.0.18
 protobuf==3.13.0
-psycopg2==2.8.5
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.20
@@ -95,7 +94,6 @@ pyrsistent==0.17.3
 PySocks==1.7.1
 python-dateutil==2.8.1
 pytz==2020.4
-pywin32==228
 PyYAML==5.3.1
 pyzmq==19.0.2
 regex==2020.5.14
