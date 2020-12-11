@@ -34,7 +34,7 @@ class PredictDisease:
     
     #function to load train dataset:
     def _loading_train(self):
-        df_train=pd.read_csv(r"C:\Users\Sanat\Desktop\PredxHack2020\backend\new_train.csv")
+        df_train=pd.read_csv(r"./new_train.csv")
         #the last column is not needed and the 2nd last column gives us the y-labels 
         columns=df_train.columns[:-1]
         
@@ -48,7 +48,7 @@ class PredictDisease:
     
     #function to load the test data 
     def _loading_test(self):
-        df_test=pd.read_csv(r"C:\Users\Sanat\Desktop\PredxHack2020\backend\new_test.csv")
+        df_test=pd.read_csv(r"./new_test.csv")
         #the last column is not needed and the 2nd last column gives us the y-labels 
         columns=df_test.columns[:-1]
         
@@ -113,7 +113,7 @@ class PredictDisease:
         score = cross_val_score(classifier, X_val, y_val, cv=3)
         
         # Save Trained Model
-        filename=r"C:\Users\Sanat\Desktop\PredxHack2020\backend"+ "model_to_be_used"
+        filename=r"./"+ "model_to_be_used"
         joblib.dump(classifier, filename + ".joblib")
         
     def _feature_correlation(self, data_frame=None, show_fig=False):
@@ -130,7 +130,7 @@ class PredictDisease:
     def make_prediction(self, saved_model_name=None, test_data=None):
         try:
             # Load Trained Model
-            filename=r"C:\Users\Sanat\Desktop\PredxHack2020\backend\saved_modelmnb"
+            filename="./saved_modelmnb"
             clf = joblib.load(filename +  ".joblib")
         except Exception as e:
             print("Model not found...")
