@@ -51,6 +51,7 @@ def register():
     #if request.method=='GET':
         #return jsonify({'message':"Get request made"})
     req = request.json
+    print(re)
     if(req.get('username') and req.get('email') and req.get('password')):
         # print(req['email'])
         
@@ -110,7 +111,7 @@ def login():
     else:
         return jsonify({'message':'1'})
 
-@app.route('/predict',methods=['GET','POST'])
+@app.route('/predict',methods=["POST"])
 def predict():
     data=request.json.get('key')
     data=data.split(',')
@@ -119,7 +120,7 @@ def predict():
     output=calc.make_prediction()
     return jsonify(output)
 
-@app.route('/cost',methods=['GET','POST'])
+@app.route('/cost',methods=["POST"])
 def cost():
     data=request.json.get('key')
     #data=data.split(',')
