@@ -17,7 +17,7 @@ from sklearn.metrics import r2_score, mean_squared_error, mean_absolute_error
 
 class HealthExpenditure():
     def __init__(self,features):
-        self.train=pd.read_csv(r"C:\Users\Sanat\Desktop\PredxHack2020\backend\new_train1.csv")
+        self.train=pd.read_csv(r"./new_train1.csv")
         
         self.features=features
         
@@ -78,10 +78,10 @@ class HealthExpenditure():
         reg_xgb.fit(self.x_train,self.y_train)
         
         #print("model is trained")
-        pickle.dump(reg_xgb, open(r"C:\Users\Sanat\Desktop\PredxHack2020\backend\cost.pickle", "wb"))
+        pickle.dump(reg_xgb, open(r"./cost.pickle", "wb"))
     
     def predict(self):
-        pickle_in = open(r"C:\Users\Sanat\Desktop\PredxHack2020\backend\cost.pickle", "rb")
+        pickle_in = open(r"./cost.pickle", "rb")
         reg_xgb = pickle.load(pickle_in)
         
         X_test=self.create_test()
